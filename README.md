@@ -73,6 +73,8 @@ For the rest of the project, I break down the broad question into these focuses:
 
 3. The dataset for the forecasted EPS 3 months prior was missing the year 1999.
 
+4. Some entries in all datasets contain missing data
+
 ## Future Applications
 
 --- 
