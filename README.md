@@ -75,6 +75,20 @@ For the rest of the project, I break down the broad question into these focuses:
 
 4. For the datasets of actual EPS and forecasted EPS 3-months prior, the firm Amcor PLC
 
+**eps_fc_terms**
+
+1. The year "1999" is missing data for all firms. This means when using this variable, we have to account only for the year 2000 onward.
+
+**eps_act**
+
+1. Contains 7 empty firms: *BRK/B UN Equity, FOX UW Equity, GOOG UW Equity, HCP UN Equity, SYMC UW Equity, UA UN Equity*
+
+**eps_fc_act**
+
+1. Has one firm with empty data: *AMCR UN Equity*
+
 ## Future Applications
 
 --- 
+
+1. Look at other dates forecasted, not just 3 months before
