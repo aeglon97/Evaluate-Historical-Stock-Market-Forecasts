@@ -1,4 +1,4 @@
-,firm_id,feature,date,term_forecast,value
+,firm_id,feature,date,term,value
 0,0,eod_act,1999-03-31,1999Q1,
 1,0,eod_act,1999-06-30,1999Q2,
 2,0,eod_act,1999-09-30,1999Q3,

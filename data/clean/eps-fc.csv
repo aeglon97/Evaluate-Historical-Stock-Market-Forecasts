@@ -1,4 +1,4 @@
-,firm_id,feature,term_forecast,value
+,firm_id,feature,term,value
 0,0,eps_fc,1999Q1,
 1,0,eps_fc,1999Q2,
 2,0,eps_fc,1999Q3,
