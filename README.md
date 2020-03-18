@@ -22,11 +22,19 @@ Here is a breakdown of my 4 factors, their explanations, and how they contribute
 
 - **Forecasted EPS:** this is a central value to measure for the question of comparing historical forecasting accuracy of various firms. Forecasts are made based on a firm's ***fiscal period.***
 
+> BDP("AAPL UW Equity","BEST_EPS","BEST_FPERIOD_OVERRIDE = 00Q1")
+
 - **Actual EPS:** this will be subtracted from the forecasted EPS to measure how far off the forecasted and actual EPS values are. This is also measured based on ***fiscal period.***
+
+> BDP("AAPL UW Equity","IS_EPS",  "FUND_PER=Q1", "EQY_FUND_YEAR=2000").
 
 - **Actual EOD Price:** the dates used for this measure correspond to the start of each ***calendar period,*** so it will be used to generate interesting visualizations and expand my analysis.
 
+> BDH("A UN Equity", "BEST_TARGET_PRICE", "03/31/1999", "03/31/2019")
+
 - **Forecasted EPS 3 months prior:** EPS forecasts are made at the beginning of each ***fiscal period.*** This feature contains EPS forecasts made 3-months period to the current fiscal period. This will be an interesting metric to compare to forecasts at differing dates for the same firm.
+
+> BDH("AAPL US Equity", "BEST_EPS", "7/1/2007", "BEST_FPERIOD_OVERRIDE=08Q1", "days=a", "fill=p")
 
 > Initially, I intended to pick every firm present in the S&P 2019 Index for the past 20 years. However, the problem is that ***firms leave and join the S&P Index at unpredictable times,*** so analyzing EPS forecasts solely based on index alone instead of firms would be a highly misdirected approach. 
 
