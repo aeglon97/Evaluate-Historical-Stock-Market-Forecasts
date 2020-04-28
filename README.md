@@ -20,13 +20,13 @@ For this project I gathered four datasets relating to the stock market through u
 
 Here is a breakdown of my 4 factors, their explanations, and how they contribute to the broad question:
 
-- **Forecasted EPS:** this is a central value to measure for the question of comparing historical forecasting accuracy of various firms. Forecasts are made based on a firm's ***fiscal period.***
+- **Forecasted EPS:** this is will be subtracted from actual EPS to measure prediction errors of forecasts. This is also a central value to measure for the question of comparing historical forecasting accuracy of various firms. Forecasts are made based on a firm's ***fiscal period.***
 
 > BDP("AAPL UW Equity","BEST_EPS","BEST_FPERIOD_OVERRIDE = 00Q1")
 
-- **Actual EPS:** this will be subtracted from the forecasted EPS to measure how far off the forecasted and actual EPS values are. This is also measured based on ***fiscal period.***
+- **Actual EPS:** This is also measured based on ***fiscal period.***
 
-> BDP("AAPL UW Equity","IS_EPS",  "FUND_PER=Q1", "EQY_FUND_YEAR=2000").
+> BDP("AAPL UW Equity","IS_EPS",  "FUND_PER=Q1", "EQY_FUND_YEAR=2000")
 
 - **Actual EOD Price:** the dates used for this measure correspond to the start of each ***calendar period,*** so it will be used to generate interesting visualizations and expand my analysis.
 
