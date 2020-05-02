@@ -67,9 +67,22 @@ For the rest of the project, I break down the broad question into these focuses:
 
 ## Findings
 
+
+
 --- 
 
 ### Results:
+
+**Overall**
+
+**Question 1**
+
+**Question 2**
+
+**Question 3**
+
+**Question 4**
+
 
 ### Limitations:
 
@@ -82,6 +95,9 @@ For the rest of the project, I break down the broad question into these focuses:
 3. The dataset for the forecasted EPS 3 months prior was missing the year 1999.
 
 4. For the datasets of actual EPS and forecasted EPS 3-months prior, the firm Amcor PLC
+
+
+
 
 **eps_fc_terms**
 
