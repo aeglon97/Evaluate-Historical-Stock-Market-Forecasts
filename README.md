@@ -86,7 +86,7 @@ Here is a breakdown of the features among the final clean CSVs:
 
 
 ## Research Questions
----
+--
 **Question 1:** Does average EPS prediction error depict any differences in trends among a yearly, quarterly, and full-term basis?
 
 1. Forecasters were most **optimistic** in 2008Q4, and most **pessimistic** in 2000Q4.
@@ -160,7 +160,7 @@ Here is a breakdown of the features among the final clean CSVs:
 
 ## Future Applications
 
---- 
+-- 
 
 1. Look at other dates forecasted, not just 3 months before.
 2. Improve linear regression models. Investigate multicollinearity to see if any other categorical or numerical value had any direct influence on affecting the generated p-values.
