@@ -1,16 +1,16 @@
 # Stock Market Antics: Evaluating Forecast Accuracy for the 2019 S&P 500 Index
 
----
+--
  
 ## Motivation
 
----
+--
 
 For this project, I gathered four datasets relating to the stock market through using Bloomberg Excel Functions. I assessed the quality of the data, cleaned it and rearranged it, and stored the data in clean CSVs. I posed my own research questions, explored the data, and reported my findings through a final thesis report and Jupyter slides.
 
 ## Introduction
 
----
+--
 
 This project was divided into 3 stages: 
 1) **data wrangling**
@@ -60,9 +60,9 @@ For the rest of the project, I break down the broad question into these focuses:
 - *focus only and only on the firms present in the S&P 2019 Index.*
 - *gather data projected from the past 20 years.*
 
----
+--
 ### Data Overview
----
+--
 Here is a breakdown of the features among the final clean CSVs:
 
 **features.csv**
@@ -87,42 +87,63 @@ Here is a breakdown of the features among the final clean CSVs:
 
 ## Research Questions
 ---
-**Question 1:** What is the difference in means between average forecasted and actual EPS of each firm for the past 20 years?
+**Question 1:** Does average EPS prediction error depict any differences in trends among a yearly, quarterly, and full-term basis?
 
-**Question 2:** What is the relationship between forecasted EPS for both forecasts made at the beginning of the fiscal period ***and*** three months prior? 
+1. Forecasters were most **optimistic** in 2008Q4, and most **pessimistic** in 2000Q4.
 
-**Question 3:** Does historical EOD price correlate with forecasted EPS? How about actual EPS?
+2. The **later the quarter, the more optimistic** forecasters become in their average quarterly EPS predictions.
 
-**Question 4:** For both the highest-performing and lowest-performing companies, do EPS forecasts show a pessimistic and/or optimistic view of their company value?
+3. The year 2000 contains the highest variance among average prediction errors, ranging from -0.25 to -1.5.
+
+4. ***The trends depicting EPS prediction error by quarter and year, separately, is consistent.*** All average EPS forecasts gather around 0 per year from 1999 - 2000, when ignoring outliers.
+
+**Question 2:** I generate "dumb EPS forecasts" by calculating the rolling mean of the 2 EPS values in the past 2 quarters. How do my forecasted EPS forecasts compare to the experts' EPS forecasts? 
+
+1. My average predicted EPS ***more closely follows the average actual EPS*** trend instead of the Bloomberg forecasters'.
+
+2. This is a key takeaway: my method of using 2-quarter moving average to predict EPS was ***much more effective*** than the method used by Bloomberg forecasters.
+
+3. My personal forecasts "spiked" and "troughed" in the terms 2000Q4 and 2008Q4—the ***exact same pattern*** as Bloomberg EPS forecasts.
+
+4. All of my EPS predictions contain higher variance than actual EPS. This means my method is less credible once accounting for all individual data points.
 
 
-## Findings
---- 
+**Question 3:** What differences/similarities emerge when analyzing the prediction error and percentage error of EPS forecasts?
 
-### Results:
+1. Forecasters, on average, are likely to be more inaccurate in their predictions in Q4 of any given year.
 
-**Question 1**
+2. For percentage errors, EPS forecasts percentage errors have become more ***inaccurate*** in the more recent terms, starting from ***2014Q1.***
 
-**Question 2**
+3. The top 5 most inaccurate firm tickers for absolute ***prediction error*** are AGN, AIG, CHTR, LCRX, and VRSN. The most notable outlier is AIG, this is the *only outlier* on average for any given year.
 
-**Question 3**
+4. The top 5 most inaccurate firm tickers for absolute ***prediction error*** are IBM, IRM, MCK, PXD, and QRVO. The most notable outlier is IRM, with a percentage error of over -1000 for EPS in the term 2014Q3.
 
-**Question 4**
+**Question 4:** Does statistical significance stay true in the relationship between actual and forecasted EPS regardless of forecasted EPS type (yearly, quarterly, twenty-year, and raw data)?
+
+1. Short answer: **Yes.** All p-values are recorded at 0.00, which is less than the Type I error threshold of 0.05.
+
+2. All r-values are positive, with values varying ***between 0.3 and 0.8*** for *average forecasted EPS* data. 
+
+3. Actual EPS vs raw forecasted EPS (not averages) depicts a ***weak positive relationship.*** This intuitively makes sense, since I would expect trends to become more unpredictable over longer spans of time, thus giving rise to more outliers.
+
+4. Out of all the regression plots depicting actual vs. forecasted EPS, the ***raw data displays the least amount of variance.*** 
+
+**Question 5:** How do EOD Prices trend across all firms from 1999 - 2019?
+
+1. EOD prices show a general positive trend from 2009, as can be seen with figure (features-eod-term). 
+
+2. EOD prices see a "trough" from 2007 - 2009: the ***exact years of the Great Recession.***
 
 
 ### Limitations:
 
 **Overall**
 
-1. There was no explicit way to gather forecasted EOD price data for each firm in the S&P 2019, on top of calculating their quarterly averages. 
+1. There was no explicit Bloomberg function to gather forecasted EOD price data by *fiscal period* for each firm in the S&P 2019.
 
-2. There is an incongruency between fiscal periods and calendar periods. 
+2. There is an incongruency between fiscal periods and calendar periods. Forecasted and actual EPS are recorded by **fiscal period**, while EOD Prices and 3-month-priorly forecasted EPS are recorded by **calendar period.**
 
 3. The dataset for the forecasted EPS 3 months prior was missing the year 1999.
-
-4. For the datasets of actual EPS and forecasted EPS 3-months prior, the firm Amcor PLC
-
-
 
 
 **eps_fc_terms**
@@ -141,4 +162,6 @@ Here is a breakdown of the features among the final clean CSVs:
 
 --- 
 
-1. Look at other dates forecasted, not just 3 months before
+1. Look at other dates forecasted, not just 3 months before.
+2. Improve linear regression models. Investigate multicollinearity to see if any other categorical or numerical value had any direct influence on affecting the generated p-values.
+3. Incorporate `eps_fc_terms` into the analysis. Look at other forecasts made from different periods, not just 3 months before. This would give me a greater insight into EPS forecasting trends made at various points in time before the current fiscal period.
