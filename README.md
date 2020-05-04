@@ -1,16 +1,13 @@
 # Stock Market Antics: Evaluating Forecast Accuracy for the 2019 S&P 500 Index
 
---
  
 ## Motivation
 
---
 
 For this project, I gathered four datasets relating to the stock market through using Bloomberg Excel Functions. I assessed the quality of the data, cleaned it and rearranged it, and stored the data in clean CSVs. I posed my own research questions, explored the data, and reported my findings through a final thesis report and Jupyter slides.
 
 ## Introduction
 
---
 
 This project was divided into 3 stages: 
 1) **data wrangling**
@@ -60,9 +57,9 @@ For the rest of the project, I break down the broad question into these focuses:
 - *focus only and only on the firms present in the S&P 2019 Index.*
 - *gather data projected from the past 20 years.*
 
---
+
 ### Data Overview
---
+
 Here is a breakdown of the features among the final clean CSVs:
 
 **features.csv**
@@ -86,7 +83,7 @@ Here is a breakdown of the features among the final clean CSVs:
 
 
 ## Research Questions
---
+
 **Question 1:** Does average EPS prediction error depict any differences in trends among a yearly, quarterly, and full-term basis?
 
 1. Forecasters were most **optimistic** in 2008Q4, and most **pessimistic** in 2000Q4.
@@ -160,7 +157,6 @@ Here is a breakdown of the features among the final clean CSVs:
 
 ## Future Applications
 
--- 
 
 1. Look at other dates forecasted, not just 3 months before.
 2. Improve linear regression models. Investigate multicollinearity to see if any other categorical or numerical value had any direct influence on affecting the generated p-values.
