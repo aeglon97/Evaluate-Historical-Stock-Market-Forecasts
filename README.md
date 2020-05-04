@@ -1,6 +1,7 @@
-# Stock Market Antics: Evaluating Forecast Accuracy for the 2019 S&P 500 Index
+# Exploring the Stock Market through the Bloomberg Terminal: An Analysis of Historical EPS Forecast Accuracy for All Firms in the 2019 S&P 500 Index
 
- 
+## This project was conducted as my undergraduate senior thesis. 
+
 ## Motivation
 
 
