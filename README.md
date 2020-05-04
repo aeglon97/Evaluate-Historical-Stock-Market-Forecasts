@@ -129,7 +129,7 @@ Here is a breakdown of the features among the final clean CSVs:
 
 1. EOD prices show a general positive trend from 2009, as can be seen with figure (features-eod-term). 
 
-2. EOD prices see a "trough" from 2007 - 2009: the ***exact years of the Great Recession.***
+2. EOD prices see a "trough" from 2007 - 2009: the ***years of the Great Recession.***
 
 
 ### Limitations:
@@ -161,3 +161,4 @@ Here is a breakdown of the features among the final clean CSVs:
 1. Look at other dates forecasted, not just 3 months before.
 2. Improve linear regression models. Investigate multicollinearity to see if any other categorical or numerical value had any direct influence on affecting the generated p-values.
 3. Incorporate `eps_fc_terms` into the analysis. Look at other forecasts made from different periods, not just 3 months before. This would give me a greater insight into EPS forecasting trends made at various points in time before the current fiscal period.
+4. Refocus my broad question to analyze variable relationships occurring during the **Great Recession.** Expand on how firms in the S&P 500 Index and their EPS and EOD prices fluctuate and responded to the stock market shifts in dynamic as a response to the economic recession.
