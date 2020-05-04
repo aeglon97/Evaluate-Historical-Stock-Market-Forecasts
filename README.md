@@ -6,13 +6,23 @@
 
 ---
 
-For this project I gathered four datasets relating to the stock market through using Bloomberg Excel Functions. I assessed the quality of the data, cleaned it and rearranged it, and stored the data in clean CSVs. I posed my own research questions, explored the data, and reported my findings through a final thesis report and Jupyter slides.
-
-[TK] here are the equations I plugged into Excel to get the data I need:
+For this project, I gathered four datasets relating to the stock market through using Bloomberg Excel Functions. I assessed the quality of the data, cleaned it and rearranged it, and stored the data in clean CSVs. I posed my own research questions, explored the data, and reported my findings through a final thesis report and Jupyter slides.
 
 ## Introduction
 
 ---
+
+This project was divided into 3 stages: 
+1) **data wrangling**
+2) **data exploration**
+3) **data explanation**
+
+The IPython Notebook files, `data_cleaning.ipynb`, `data_exploratory.ipynb`, and `data_explanatory.ipynb` all document the above 3 stages respectively. The first 2 files have been converted to HTML for convenience.
+
+### To convert my Jupyter Notebook slides, clone the repository and navigate to the terminal. Follow these steps:
+
+1) Navigate to `/Thesis/`
+2) type `jupyter nbconvert pisa2012_explanatory.ipynb --to slides --template output_toggle.tpl --post serve`
 
 **Broad question:** How do price forecasts for each firm in the S&P 2019 Index compare to their corresponding actual prices? 
 
@@ -36,11 +46,11 @@ Here is a breakdown of my 4 factors, their explanations, and how they contribute
 
 > BDH("AAPL US Equity", "BEST_EPS", "7/1/2007", "BEST_FPERIOD_OVERRIDE=08Q1", "days=a", "fill=p")
 
-> Initially, I intended to pick every firm present in the S&P 2019 Index for the past 20 years. However, the problem is that ***firms leave and join the S&P Index at unpredictable times,*** so analyzing EPS forecasts solely based on index alone instead of firms would be a highly misdirected approach. 
+Initially, I intended to pick every firm present in the S&P 2019 Index for the past 20 years. However, the problem is that ***firms leave and join the S&P Index at unpredictable times,*** so analyzing EPS forecasts solely based on index alone instead of firms would be a highly misdirected approach. 
 
-> Of course I could keep track of every firm that left and entered the S&P 500 index for the last 20 years. But due to the scope of this project, such an investigation was infeasible. I elaborate more on this under the **Future Applications** section.
+Of course I could keep track of every firm that left and entered the S&P 500 index for the last 20 years. But due to the scope of this project, such an investigation was infeasible. I elaborate more on this under the **Future Applications** section.
 
-> It was more important to keep the same companies consistent across all datasets. To keep true to this approach, I picked the S&P 2019 firms as of November 2019. 
+It was more important to keep the same companies consistent across all datasets. To keep true to this approach, I picked the S&P 2019 firms as of November 2019. 
 
 ### Focus 
 
@@ -51,11 +61,32 @@ For the rest of the project, I break down the broad question into these focuses:
 - *gather data projected from the past 20 years.*
 
 ---
+### Data Overview
+---
+Here is a breakdown of the features among the final clean CSVs:
+
+**features.csv**
+- *firm_id*
+- *feature*
+- *date*
+- *term*
+- *value*
+
+**avgs.csv**
+- *firm_id*
+- *average*
+- *average_type*
+- *time_period*
+- *feature*
+
+**firms.csv**
+- *firm_id*
+- *firm*
+
+
 
 ## Research Questions
-
 ---
-
 **Question 1:** What is the difference in means between average forecasted and actual EPS of each firm for the past 20 years?
 
 **Question 2:** What is the relationship between forecasted EPS for both forecasts made at the beginning of the fiscal period ***and*** three months prior? 
@@ -66,14 +97,9 @@ For the rest of the project, I break down the broad question into these focuses:
 
 
 ## Findings
-
-
-
 --- 
 
 ### Results:
-
-**Overall**
 
 **Question 1**
 
