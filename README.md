@@ -16,7 +16,7 @@ This project was divided into 3 stages:
 
 The IPython Notebook files, `data_cleaning.ipynb`, `data_exploratory.ipynb`, and `data_explanatory.ipynb` all document the above 3 stages respectively. The first 2 files have been converted to HTML for convenience.
 
-### To convert my Jupyter Notebook slides, clone the repository and navigate to the terminal. Follow these steps:
+### To view my Jupyter Notebook slides, clone the repository and navigate to the terminal. Follow these steps:
 
 1) Navigate to `/Thesis/`
 2) type `jupyter nbconvert pisa2012_explanatory.ipynb --to slides --template output_toggle.tpl --post serve`
