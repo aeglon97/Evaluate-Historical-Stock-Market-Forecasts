@@ -12,7 +12,7 @@ For this project, I gathered four datasets relating to the stock market through 
 This project was divided into 3 stages: 
 1) **data wrangling**
 2) **data exploration**
-3) **data explanation**
+3) **data explanatory**
 
 The IPython Notebook files, `data_cleaning.ipynb`, `data_exploratory.ipynb`, and `data_explanatory.ipynb` all document the above 3 stages respectively. The first 2 files have been converted to HTML for convenience.
 
