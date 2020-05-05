@@ -85,7 +85,7 @@ Here is a breakdown of the features among the final clean CSVs:
 
 ## Research Questions
 
-**Question 1:** Does average EPS prediction error depict any differences in trends among a yearly, quarterly, and full-term basis?
+**Question 1:** Does average EPS prediction error depict any differences in trends whether by a yearly, quarterly, or full-term basis?
 
 1. Forecasters were most **optimistic** in 2008Q4, and most **pessimistic** in 2000Q4.
 
@@ -95,7 +95,7 @@ Here is a breakdown of the features among the final clean CSVs:
 
 4. ***The trends depicting EPS prediction error by quarter and year, separately, is consistent.*** All average EPS forecasts gather around 0 per year from 1999 - 2000, when ignoring outliers.
 
-**Question 2:** I generate "dumb EPS forecasts" by calculating the rolling mean of the 2 EPS values in the past 2 quarters. How do my forecasted EPS forecasts compare to the experts' EPS forecasts? 
+**Question 2:** I generate “dumb EPS forecasts” by calculating the rolling mean of actual EPS from the past 2 quarters. How do my forecasted EPS forecasts compare to Bloomberg forecasts? 
 
 1. My average predicted EPS ***more closely follows the average actual EPS*** trend instead of the Bloomberg forecasters'.
 
@@ -106,7 +106,7 @@ Here is a breakdown of the features among the final clean CSVs:
 4. All of my EPS predictions contain higher variance than actual EPS. This means my method is less credible once accounting for all individual data points.
 
 
-**Question 3:** What differences/similarities emerge when analyzing the prediction error and percentage error of EPS forecasts?
+**Question 3:** What differences and similarities emerge when analyzing the prediction error and percentage error of EPS forecasts?
 
 1. Forecasters, on average, are likely to be more inaccurate in their predictions in Q4 of any given year.
 
@@ -116,7 +116,7 @@ Here is a breakdown of the features among the final clean CSVs:
 
 4. The top 5 most inaccurate firm tickers for absolute ***prediction error*** are IBM, IRM, MCK, PXD, and QRVO. The most notable outlier is IRM, with a percentage error of over -1000 for EPS in the term 2014Q3.
 
-**Question 4:** Does statistical significance stay true in the relationship between actual and forecasted EPS regardless of forecasted EPS type (yearly, quarterly, twenty-year, and raw data)?
+**Question 4:** Does statistical significance stay true among the relationships between actual EPS and forecasted EPS, regardless of forecasted type (raw data along with all yearly, quarterly, and twenty-year averages)?
 
 1. Short answer: **Yes.** All p-values are recorded at 0.00, which is less than the Type I error threshold of 0.05.
 
@@ -139,7 +139,7 @@ Here is a breakdown of the features among the final clean CSVs:
 
 1. There was no explicit Bloomberg function to gather forecasted EOD price data by *fiscal period* for each firm in the S&P 2019.
 
-2. There is an incongruency between fiscal periods and calendar periods. Forecasted and actual EPS are recorded by **fiscal period**, while EOD Prices and 3-month-priorly forecasted EPS are recorded by **calendar period.**
+2. There is an incongruence between fiscal periods and calendar periods. Forecasted and actual EPS are recorded by **fiscal period**, while EOD Prices and 3-month-priorly forecasted EPS are recorded by **calendar period.**
 
 3. The dataset for the forecasted EPS 3 months prior was missing the year 1999.
 
