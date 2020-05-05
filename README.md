@@ -51,7 +51,7 @@ It was more important to keep the same companies consistent across all datasets.
 
 ### Focus 
 
-For the rest of the project, I break down the broad question into these focuses:
+For the rest of the project, I break down the broad question into these directions:
 
 - *compare both forecast and actual EPS for each firm in the S&P 2019.*
 - *focus only and only on the firms present in the S&P 2019 Index.*
