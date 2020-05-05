@@ -5,10 +5,9 @@
 ## Motivation
 
 
-For this project, I gathered four datasets relating to the stock market through using Bloomberg Excel Functions. I assessed the quality of the data, cleaned it and rearranged it, and stored the data in clean CSVs. I posed my own research questions, explored the data, and reported my findings through a final thesis report and Jupyter slides.
+For this project, I used Bloomberg Excel Functions to gather data on EPS and EOD prices for all firms in the 2019 S&P 500 Index. I assessed the quality of the data, cleaned and rearranged it, and stored the data in clean CSVs. I posed my own research questions, explored the data, and reported my findings through a final thesis report and Jupyter slides.
 
 ## Introduction
-
 
 This project was divided into 3 stages: 
 1) **data wrangling**
