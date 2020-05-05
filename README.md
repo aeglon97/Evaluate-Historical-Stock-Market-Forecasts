@@ -19,8 +19,8 @@ The IPython Notebook files, `data_cleaning.ipynb`, `data_exploratory.ipynb`, and
 
 ### To view my Jupyter Notebook slides, clone the repository and navigate to the terminal. Follow these steps:
 
-1) Navigate to `/Thesis/`
-2) type `jupyter nbconvert pisa2012_explanatory.ipynb --to slides --template output_toggle.tpl --post serve`
+1) Navigate to `/Evaluate-Historical-Stock-Market-Forecasts/`
+2) type `jupyter nbconvert data_explanatory.ipynb --to slides --template output_toggle.tpl --post serve`
 
 **Broad question:** How do price forecasts for each firm in the S&P 2019 Index compare to their corresponding actual prices? 
 
