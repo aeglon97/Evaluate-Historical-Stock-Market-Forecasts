@@ -1,4 +1,4 @@
-# Evaluating Stock Market Trends through the Bloomberg Terminal: An Analysis of Historical EPS Forecast Accuracy for All Firms in the 2019 S&P 500 Index
+# Using the Bloomberg Terminal to Evaluate Stock Market Trends: An Analysis of Historical EPS Forecast Accuracy for All Firms in the 2019 S&P 500 Index
 
 ## This project was conducted as my undergraduate senior thesis. 
 
