@@ -16,10 +16,7 @@ This project was divided into 3 stages:
 
 The IPython Notebook files, `data_cleaning.ipynb`, `data_exploratory.ipynb`, and `data_explanatory.ipynb` all document the above 3 stages respectively. The first 2 files have been converted to HTML for convenience.
 
-### To view my Jupyter Notebook slides, clone the repository and navigate to the terminal. Follow these steps:
-
-1) Navigate to `/Evaluate-Historical-Stock-Market-Forecasts/`
-2) type `jupyter nbconvert data_explanatory.ipynb --to slides --template output_toggle.tpl --post serve`
+### To view my Jupyter Notebook slides, clone the repository and render the `data_explanatory.slides.html` file in your browser.
 
 **Broad question:** How do price forecasts for each firm in the S&P 2019 Index compare to their corresponding actual prices? 
 
@@ -94,15 +91,20 @@ Here is a breakdown of the features among the final clean CSVs:
 
 4. ***The trends depicting EPS prediction error by quarter and year, separately, is consistent.*** All average EPS forecasts gather around 0 per year from 1999 - 2000, when ignoring outliers.
 
-**Question 2:** I generate “dumb EPS forecasts” by calculating the rolling mean of actual EPS from the past 2 quarters. How do my forecasted EPS forecasts compare to Bloomberg forecasts? 
+1. There was much more variance among quarterly EPS prediction errors than by a yearly or termly basis
 
-1. My average predicted EPS ***more closely follows the average actual EPS*** trend instead of the Bloomberg forecasters'.
+**Question 2:** I generate naive EPS forecasts by calculating the rolling mean of the 2 actual EPS values from the past 2 quarters. How do my EPS forecasts compare to Bloomberg's EPS forecasts?
 
-2. This is a key takeaway: my method of using 2-quarter moving average to predict EPS was ***much more effective*** than the method used by Bloomberg forecasters.
+1. My naive forecasts tended to be overly optimistic in 2001Q1 and 2000Q4 (the latter being consistent with the Bloomberg forecasts).
+Meanwhile, my naive forecasts tended to be overly pessimistic in 2000Q4 and 2001Q1.
 
-3. My personal forecasts "spiked" and "troughed" in the terms 2000Q4 and 2008Q4—the ***exact same pattern*** as Bloomberg EPS forecasts.
+2. In the more recent years since 2012, Bloomberg EPS forecasts were less accurate than my own naive forecasts.
 
-4. All of my EPS predictions contain higher variance than actual EPS. This means my method is less credible once accounting for all individual data points.
+3. My naive forecasts spiked in pessimism during 2009Q1: only right before the Great Recession began to recover in June of 2009. Meanwhile, Bloomberg forecasters tended to be overly optimistic in their EPS forecasts during the "harder" years of the bear market.
+
+4. Overall, my naive forecasts tend to be more accurate and better-fitting than Bloomberg forecasts across all years.
+
+5. Across all quarters, my naive forecasts have always tended to be a better fit than the Bloomberg EPS forecasts.
 
 
 **Question 3:** What differences and similarities emerge when analyzing the prediction error and percentage error of EPS forecasts?
@@ -115,15 +117,13 @@ Here is a breakdown of the features among the final clean CSVs:
 
 4. The top 5 most inaccurate firm tickers for absolute ***prediction error*** are IBM, IRM, MCK, PXD, and QRVO. The most notable outlier is IRM, with a percentage error of over -1000 for EPS in the term 2014Q3.
 
-**Question 4:** Does statistical significance stay true among the relationships between actual EPS and forecasted EPS, regardless of forecasted type (raw data along with all yearly, quarterly, and twenty-year averages)?
+**Question 4:** How do my naive RMSE values compare to Bloomberg RMSE when accounting for EPS forecasts? For what percentage of firms does my naive RMSE beat Bloomberg’s RMSE?
 
-1. Short answer: **Yes.** All p-values are recorded at 0.00, which is less than the Type I error threshold of 0.05.
+1. There are, in fact, more Bloomberg EPS RMSE values that are greater than my Naive EPS RMSE values per firm. This means that for the bulk majority of the data, my naive forecasts were much more reliable than the Bloomberg EPS forecasts.
 
-2. All r-values are positive, with values varying ***between 0.3 and 0.8*** for *average forecasted EPS* data. 
+2. Of all the RMSE values, 86.95% of my Naive EPS RMSE values are less than the Bloomberg EPS RMSE values.
 
-3. Actual EPS vs raw forecasted EPS (not averages) depicts a ***weak positive relationship.*** This intuitively makes sense, since I would expect trends to become more unpredictable over longer spans of time, thus giving rise to more outliers.
-
-4. Out of all the regression plots depicting actual vs. forecasted EPS, the ***raw data displays the least amount of variance.*** 
+3. After sorting each firm's Bloomberg and naive RMSE in decreasing order, the top 2 most inaccurately-predicted firm tickers are AIG and LRCX.
 
 **Question 5:** How do EOD Prices trend across all firms from 1999 - 2019?
 
@@ -159,6 +159,6 @@ Here is a breakdown of the features among the final clean CSVs:
 
 
 1. Look at other dates forecasted, not just 3 months before.
-2. Improve linear regression models. Investigate multicollinearity to see if any other categorical or numerical value had any direct influence on affecting the generated p-values.
+2. Implement linear regression models. Investigate multicollinearity to see if any other categorical or numerical value had any direct influence on affecting the generated p-values between forecasted and actual EPS.
 3. Incorporate `eps_fc_terms` into the analysis. Look at other forecasts made from different periods, not just 3 months before. This would give me a greater insight into EPS forecasting trends made at various points in time before the current fiscal period.
 4. Refocus my broad question to analyze variable relationships occurring during the **Great Recession.** Expand on how firms in the S&P 500 Index and their EPS and EOD prices fluctuate and responded to the stock market shifts in dynamic as a response to the economic recession.
